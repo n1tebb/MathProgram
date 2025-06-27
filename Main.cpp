@@ -9,7 +9,6 @@
 #include "hd/Vector.hpp"
 #include "hd/Segment.hpp"
 
-// Поддержка русской кодировки в Windows
 #ifdef _WIN32
     #include <windows.h>
 #endif
@@ -17,9 +16,7 @@
 using namespace std;
 
 int main() {
-	    // Настройка кодировки для Windows
     #ifdef _WIN32
-        // Устанавливаем UTF-8 кодировку для консоли
         SetConsoleOutputCP(CP_UTF8);
         SetConsoleCP(CP_UTF8);
     #endif
@@ -28,7 +25,7 @@ int main() {
 	cout << endl;
 
 	try {
-		// === ДЕМОНСТРАЦИЯ КЛАССА INTEGER ===
+		//INTEGER
 		cout << "--- КЛАСС INTEGER ---" << endl;
 		Integer int1(15);
 		Integer int2(25);
@@ -40,7 +37,7 @@ int main() {
 		cout << "НОК: " << int1.Nok(int2) << endl;
 		cout << endl;
 
-		// === ДЕМОНСТРАЦИЯ КЛАССА FRACTION ===
+		//FRACTION
 		cout << "--- КЛАСС FRACTION ---" << endl;
 		Fraction frac1(3, 4);
 		Fraction frac2(5, 6);
@@ -50,7 +47,7 @@ int main() {
 		cout << "Целая часть дроби 2: " << frac2.FtoInteger().ToString() << endl;
 		cout << endl;
 
-		// === ДЕМОНСТРАЦИЯ КЛАССА REAL ===
+		//REAL
 		cout << "--- КЛАСС REAL ---" << endl;
 		Real real1(Integer(3), Integer(1));  // 3/1 = 3.00
 		Real real2(Integer(5), Integer(2));  // 5/2 = 2.50
@@ -68,7 +65,7 @@ int main() {
 		Point2D p2(Real(Fraction(three, one)), Real(Fraction(zero, one)));
 		Point2D p3(Real(Fraction(zero, one)), Real(Fraction(four, one)));
 
-		// === ДЕМОНСТРАЦИЯ ГЕОМЕТРИЧЕСКИХ ФИГУР ===
+		//ДЕМОНСТРАЦИЯ ГЕОМЕТРИЧЕСКИХ ФИГУР
 		cout << "--- ТРЕУГОЛЬНИК ---" << endl;
 		Triangle triangle(p1, p2, p3);
 		
